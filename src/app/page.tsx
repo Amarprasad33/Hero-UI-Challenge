@@ -115,7 +115,7 @@ export default function Home() {
   return (
     <div className="relative flex min-h-screen font-[family-name:var(--font-geist-sans)]">
       <aside id="sidebar-multi-level-sidebar" className={`fixed lg:sticky left-0 top-0 z-10 h-[100dvh] ${sideMenuToggle ? 'w-full' : 'w-0'} overflow-hidden transition-all duration-300 lg:max-w-[224px] lg:pointer-events-auto ${sideMenuToggle ? 'opacity-100' : 'opacity-0 lg:opacity-100'}  ${sideMenuToggle ? 'pointer-events-auto' : 'pointer-events-none'} ${sideMenuToggle ? 'translate-x-0' : '-translate-x-full'}`} aria-label="Sidebar">
-        <div className="absolute inset-0 bg-gray-500 bg-opacity-75"></div>
+        {sideMenuToggle && <div className="lg:hidden absolute inset-0 bg-gray-500 bg-opacity-75"></div>}
         <div id="sidebar-contents" ref={sideMenuRef} className={`relative h-[100dvh] text-[#fff] max-w-[224px] mr-auto px-2 py-4 transition-transform duration-300 ease-in-out flex flex-col gap-4 overflow-y-auto bg-[#EDEDED] dark:bg-[#0A0A0A] border-r border-[#D4D4D4] dark:border-[#3D3D3D]`}>
           <div className="flex gap-3 text-[#fff] items-center mx-auto w-[94%]">
             <button onClick={closeSideMenu} className="p-2 rounded-lg hover:bg-[var(--btnHover)] dark:hover:bg-[var(--darkBtnHover)] cursor-pointer">
